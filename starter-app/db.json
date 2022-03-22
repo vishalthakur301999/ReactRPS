@@ -1,0 +1,24 @@
+{
+  "users": [
+    {
+      "name": "Vishal",
+      "age": 22,
+      "id": 1
+    },
+    {
+      "name": "Rameet",
+      "age": 23,
+      "id": 3
+    },
+    {
+      "name": "Ram",
+      "age": 25,
+      "id": 4
+    },
+    {
+      "name": "Tarush",
+      "age": "22",
+      "id": 5
+    }
+  ]
+}
