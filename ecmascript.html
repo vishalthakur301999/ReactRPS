@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES 6 Tutorial</title>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <div>
+        <h2 id="demo2"></h2>
+        <h3 id="demo3"></h3>
+        <button id="btn">Button</button>
+        <p id="inventory"></p>
+    </div>
+    <script>
+        var name = "Vishal";
+        var people = [];
+        function addMoney(){
+            var moneyInAccount = 5000;
+            var moneyInCash = 200;
+            var totalMoney = moneyInAccount + moneyInCash;
+            console.log(totalMoney);
+        }
+        addMoney();
+        let applePrice = 120;
+        {
+            let applePrice = 200;
+            console.log(applePrice);
+        }
+        console.log(applePrice);
+
+        const noOfMoons = 1;
+        //noOfMoons = 2;
+        console.log(noOfMoons);
+
+        function totalMemory(ssd, hdd){  // the previous method
+            const total = ssd+hdd;
+            console.log(total+" GB");
+        }
+        totalMemory(512, 1000);
+
+        const totalRam = (stick1, stick2) => {
+            ram = stick1+stick2;
+            console.log(ram); 
+        };
+        totalRam(16, 32);
+
+        displayname = () => {
+            console.log("Vishal Thakur");
+        }
+        displayname();
+
+        displayText = (subject) => "Welcome to "+subject+" Training!";
+        x = (y,z) => y*z;
+        console.log(x(5,10));
+
+        document.getElementById("demo2").innerHTML = displayText("React");
+
+
+        hello = () => {
+            document.getElementById("demo3").innerHTML += this;
+        }
+        window.addEventListener("load", hello);
+        document.getElementById("btn").onclick = hello;
+
+        class Inventory{
+            constructor(name, price, quantity){
+                this.Name = name;
+                this.Price = price;
+                this.Quantity = quantity;
+            }
+        }
+        const AppleInventory = new Inventory("Apple", 120.00, 100);
+        document.getElementById("inventory").innerHTML = "Item name - "+AppleInventory.Name+"<br>Quantity Availaible - "+AppleInventory.Quantity+"<br>Price - "+AppleInventory.Price;
+
+        const vehicles = ["City", "Swift", "Endevour"];
+
+        let Sedan = vehicles[0];
+
+        const [sedan, hatch, suv] = vehicles;
+
+        console.log(sedan+" "+hatch+" "+suv);
+
+        const laptopSpecs = {
+            brand: "Apple",
+            model: "MacBook Pro 13'",
+            type: "Thin and Light Professional Laptop",
+            year: 2020,
+        }
+        function mylaptop({brand, year, model, type}){
+            return "My laptop is a "+brand+" "+model+" ("+year+") which is a "+type;
+        }
+        console.log(mylaptop(laptopSpecs));
+        const fruits = ["apples", "bananas", "pineapples", "oranges"];
+        console.log(fruits);
+        const veggies = ["potato", "carrots", "bottle gourd", "lady finger"];
+        console.log(veggies);
+        const allProducts = [...fruits, ...veggies];
+        console.log(allProducts);
+
+
+        const updatedLaptopSpecs ={
+            ram: 16,
+            procesor: "Apple Silicon M1",
+            cpuCores: 8,
+            gpuCores: 8
+        }
+
+
+        const finalLaptopSpecs = {...laptopSpecs,...updatedLaptopSpecs};
+
+        console.log(laptopSpecs);
+        console.log(updatedLaptopSpecs);
+        console.log(finalLaptopSpecs);
+
+        const myPromise = new Promise(function (resolve, reject) {
+
+            let x=1;
+
+            if(x==0){
+                resolve("Hello Promise Resolved");
+            }
+            else{
+                reject("Hello Promise Rejected");
+            }
+        });
+
+        myPromise.then(
+            function(value){console.log(value);},
+            function(error){console.log(error);}
+        )
+    </script>
+</body>
+</html>
