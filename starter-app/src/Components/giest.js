@@ -6,7 +6,7 @@ import Inventory from './inventory'
 
 const Home = () => (
   <Page>
-        <Page.Header>
+        <Page.Header center>
             <h2>React Training Codes</h2>
         </Page.Header>
         <Page.Content>

@@ -3,6 +3,14 @@ import { Card } from '@geist-ui/core';
 
 class Inventory extends Component {
 
+    constructor(props) {
+      super(props)
+    
+      this.state = {
+         
+      }
+    }
+    
     render() {
         return (
             <Card hoverable>
