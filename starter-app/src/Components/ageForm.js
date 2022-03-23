@@ -68,41 +68,42 @@ export default class AgeForm extends Component {
     }
 
     render() {
+        const { name, age, profession, address, jsonDbData } = this.state;
         return (
             <div>
                 <Input
                     placeholder="Your Name"
                     scale={4 / 3}
                     width="60%"
-                    value={this.state.name}
+                    value={name}
                     onChange={this.nameHandler} />
                 <Spacer h={.5} />
                 <Input
                     placeholder="Your Age"
                     scale={4 / 3}
                     width="60%"
-                    value={this.state.age}
+                    value={age}
                     onChange={this.ageHandler} />
                 <Spacer h={.5} />
                 <Input
                     placeholder="Your Profession"
                     scale={4 / 3}
                     width="60%"
-                    value={this.state.profession}
+                    value={profession}
                     onChange={this.professionHandler} />
                 <Spacer h={.5} />
                 <Input
                     placeholder="Your Address"
                     scale={4 / 3}
                     width="60%"
-                    value={this.state.address}
+                    value={address}
                     onChange={this.addressHandler} />
                 <Spacer h={.5} />
                 <Button onClick={this.submitHandler}>Add Record</Button>
                 <Spacer h={.5} />
                 <Button onClick={this.fetchHandler}>Fetch All Records</Button>
                 <Spacer h={.5} />
-                <Table data={this.state.jsonDbData}>
+                <Table data={jsonDbData}>
                     <Table.Column prop="id" label="ID" />
                     <Table.Column prop="name" label="Name" />
                     <Table.Column prop="age" label="Age" />

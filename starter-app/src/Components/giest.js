@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
 import GForm from './gForm';
-import { Page, Text, Spacer, Tabs } from '@geist-ui/core'
+import { Page, Text, Spacer, Tabs, Button } from '@geist-ui/core'
 import Car from './car'
 import Footer from './footer'
 import Inventory from './inventory'
 import Container from './unMountEx';
 import AgeForm from './ageForm';
-
-
+import Score from './score';
+import ScoreFN from './scoreFN';
+import Timer from './hooks';
+import { Outlet, Link} from 'react-router-dom';
 
 class Home extends Component {
 
@@ -16,6 +18,9 @@ class Home extends Component {
             <Page>
                 <Page.Header center>
                     <h2 className='pt3'>React Training Codes</h2>
+                    <Spacer h={2} />
+                    <Link to="/home"><Button scale={0.5}>Home</Button></Link>
+                    <Link to="/about"><Button scale={0.5}>About</Button></Link>
                 </Page.Header>
                 <Page.Content>
                     <Tabs initialValue="3">
@@ -37,6 +42,13 @@ class Home extends Component {
                         <Tabs.Item label="Form 2 Json" value="3">
                             <AgeForm/>
                             <Spacer h={.5} />
+                        </Tabs.Item>
+                        <Tabs.Item label="Pure Component and Hooks" value="4">
+                            <Score score="87"/>
+                            <Spacer h={.5} />
+                            <ScoreFN score="25"/>
+                            <Spacer h={.5} />
+                            <Timer />
                         </Tabs.Item>
                     </Tabs>
 
