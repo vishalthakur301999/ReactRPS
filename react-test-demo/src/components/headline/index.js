@@ -1,29 +1,37 @@
-import React, { Component } from 'react'
-import './style.scss';
-import propTypes from 'prop-types';
+import React from "react";
+import PropTypes from 'prop-types' 
+class Headline extends React.Component {
 
-class Headline extends Component {
-  constructor(props) {
-    super(props);
-  }
+    constructor(props) {
+        super(props);
 
-  render() {
-    // @ts-ignore
-    const {header, desc} = this.props;
-    if(!header){
-      return null;
     }
-    return (
-      <div data-test="HeadlineComponent" className='w-100 tc pa3 mt2 sans-serif'>
-        <span data-test="header" className='f1 b'>Headline - {header}</span>
-        <p data-test="desc" className='f3 i'>{desc}</p>
-      </div>
-    )
-  }
+    render(){
+        const {header, desc} = this.props
+
+        if(!header) {
+            return null;
+        }
+
+        return(
+            <div data-test="HeadlineComponent"> 
+                <h1 data-test="header">{header}</h1>
+                <p data-test="desc">{desc}</p>
+            </div>
+        )
+    }
 }
 Headline.propTypes = {
-  header: propTypes.string,
-  desc: propTypes.string
+    header: PropTypes.string,
+    desc: PropTypes.string,
+    tempArr: PropTypes.arrayOf(PropTypes.shape({
+        fName: PropTypes.string,
+        lName: PropTypes.string,
+        email: PropTypes.string,
+        age: PropTypes.number,
+        onlineStatus: PropTypes.bool
+
+    }))
 }
 
-export default Headline;
+export default Headline

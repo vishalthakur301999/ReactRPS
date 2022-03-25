@@ -1,13 +1,13 @@
 import React from "react";
-import './style.scss'
+import './styles.scss'
 import Logo from '../../assets/graphics/logo.png'
 
-const Header = () => {
+const Header = (props) => {
     return (
         <header data-test="headerComponent" className="headerComponent">
             <div data-test="wrap" className="wrap">
                 <div data-test="logo" className="logo">
-                    <img data-test="logoIMG" className="logoIMG" src={Logo} alt="Logo"/>
+                    <img data-test="logoIMG" src={Logo} alt="Logo"/>
                 </div>
             </div>
         </header> 
