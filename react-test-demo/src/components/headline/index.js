@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import './style.scss';
+import propTypes from 'prop-types';
 
-export class Headline extends Component {
+class Headline extends Component {
   constructor(props) {
     super(props);
   }
@@ -20,3 +21,9 @@ export class Headline extends Component {
     )
   }
 }
+Headline.propTypes = {
+  header: propTypes.string,
+  desc: propTypes.string
+}
+
+export default Headline;
